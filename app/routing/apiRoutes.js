@@ -41,7 +41,7 @@ module.exports = function (app) {
             totalDifference = 0;
 
             // Loop through all the scores of each friend
-            for (var j = 0; j < friendsData[i].scores[j]; j++) {
+            for (var j = 0; j < friendsData[i].scores[j].length; j++) {
 
                 // Calculate the difference between the scores and sum them into the totalDifference
                 totalDifference += Math.abs(parseInt(userScores[j]) - parseInt(friendsData[i].scores[j]));
@@ -70,7 +70,7 @@ module.exports = function (app) {
         friendsData.push(req.body);
         // console.log(friendsData);
         console.log(req.body);
-        res.json(friendsData);
+        // res.json(friendsData);
     });
 };
 
