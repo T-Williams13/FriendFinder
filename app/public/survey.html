@@ -276,7 +276,7 @@
         var userInput = {
             name: $("#name").val(),
             photo: $("#photo").val(),
-            answers: [
+            scores: [
                 parseInt($("#q1").val().charAt(0)),
                 parseInt($("#q2").val().charAt(0)),
                 parseInt($("#q3").val().charAt(0)),
@@ -296,9 +296,8 @@
         
         $.ajax({
             type: 'post',
-            url: currentURL + "api.friendData",
-            data: JSON.stringify(userInput),
-            contentType: "application/json",
+            url: "/api/friends",
+            data: userInput,
             success: function (data, status, xhr) {
                 console.log(data)
                 $("#matchName").text(data.name);
